@@ -1,0 +1,1287 @@
+{
+  "asa": [
+    {
+      "status": "AUTHORIZATION",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "2f05a4d4-07c5-42c1-a567-438737b7a0ab"
+    }
+  ],
+  "asa_authorization": [
+    {
+      "status": "AUTHORIZATION",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "ef867c4d-53fc-49e5-ba8c-342209eb9b5c"
+    },
+    {
+      "status": "PENDING",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "81832b7a-8881-48fe-b309-3bff1fcfc986"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "ef867c4d-53fc-49e5-ba8c-342209eb9b5c"
+    }
+  ],
+  "credit_authorization_advice": [
+    {
+      "status": "PENDING",
+      "amount": -1000,
+      "acquirer_fee": 0,
+      "authorization_amount": -1000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": -1000,
+          "created": "2023-02-18T14:06:45Z",
+          "result": "APPROVED",
+          "type": "CREDIT_AUTHORIZATION_ADVICE",
+          "token": "6e0494c8-dc36-4a6b-94b5-340dfca8de64"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "479a09e2-bf10-40d5-8fb5-fa21297114df"
+    }
+  ],
+  "credit_authorization_advice_reversal": [
+    {
+      "status": "PENDING",
+      "amount": -1000,
+      "acquirer_fee": 0,
+      "authorization_amount": -1000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": -1000,
+          "created": "2023-02-18T14:06:45Z",
+          "result": "APPROVED",
+          "type": "CREDIT_AUTHORIZATION_ADVICE",
+          "token": "6e0494c8-dc36-4a6b-94b5-340dfca8de64"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "479a09e2-bf10-40d5-8fb5-fa21297114df"
+    },
+    {
+      "status": "VOIDED",
+      "amount": 0,
+      "acquirer_fee": 0,
+      "authorization_amount": 0,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": -1000,
+          "created": "2023-02-18T14:06:45Z",
+          "result": "APPROVED",
+          "type": "CREDIT_AUTHORIZATION_ADVICE",
+          "token": "6e0494c8-dc36-4a6b-94b5-340dfca8de64"
+        },
+        {
+          "amount": 1000,
+          "created": "2023-02-18T14:06:45Z",
+          "type": "AUTHORIZATION_REVERSAL",
+          "result": "APPROVED",
+          "token": "ba94411f-7a71-413e-8e80-5b0e0dcc678b"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "479a09e2-bf10-40d5-8fb5-fa21297114df"
+    }
+  ],
+  "asa_decline": [
+    {
+      "status": "AUTHORIZATION",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "67734487-03fc-4451-b9f3-c89fce63ab8f"
+    },
+    {
+      "status": "DECLINED",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "UNAUTHORIZED_MERCHANT",
+          "token": "3318a65f-2245-4058-bd6c-9bee76f8b0af"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "67734487-03fc-4451-b9f3-c89fce63ab8f"
+    }
+  ],
+  "asa_auth_clear": [
+    {
+      "status": "AUTHORIZATION",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "3b8937a2-bf03-4bd4-83e8-ededf56118e9"
+    },
+    {
+      "status": "PENDING",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "5e20e176-82bd-49b4-955c-c059b153b5db"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "3b8937a2-bf03-4bd4-83e8-ededf56118e9"
+    },
+    {
+      "status": "SETTLED",
+      "amount": 1000,
+      "acquirer_fee": 0,
+      "authorization_amount": 1000,
+      "settled_amount": 1000,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "5e20e176-82bd-49b4-955c-c059b153b5db"
+        },
+        {
+          "amount": 1000,
+          "type": "CLEARING",
+          "result": "APPROVED",
+          "token": "108449c6-122c-43a4-936c-228056e8ee58"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "3b8937a2-bf03-4bd4-83e8-ededf56118e9"
+    }
+  ],
+  "asa_partial_clear": [
+    {
+      "status": "AUTHORIZATION",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "3b8937a2-bf03-4bd4-83e8-ededf56118e9"
+    },
+    {
+      "status": "PENDING",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "5e20e176-82bd-49b4-955c-c059b153b5db"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "3b8937a2-bf03-4bd4-83e8-ededf56118e9"
+    },
+    {
+      "status": "SETTLED",
+      "amount": 100,
+      "acquirer_fee": 0,
+      "authorization_amount": 900,
+      "settled_amount": 100,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "5e20e176-82bd-49b4-955c-c059b153b5db"
+        },
+        {
+          "amount": 100,
+          "type": "CLEARING",
+          "result": "APPROVED",
+          "token": "108449c6-122c-43a4-936c-228056e8ee58"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "3b8937a2-bf03-4bd4-83e8-ededf56118e9"
+    }
+  ],
+  "asa_multiple_completion_with_voids_and_returns": [
+    {
+      "status": "AUTHORIZATION",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "3b8937a2-bf03-4bd4-83e8-ededf56118e9"
+    },
+    {
+      "status": "PENDING",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "5e20e176-82bd-49b4-955c-c059b153b5db"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "3b8937a2-bf03-4bd4-83e8-ededf56118e9"
+    },
+    {
+      "status": "SETTLED",
+      "amount": 800,
+      "acquirer_fee": 0,
+      "authorization_amount": 200,
+      "settled_amount": 800,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "5e20e176-82bd-49b4-955c-c059b153b5db"
+        },
+        {
+          "amount": 800,
+          "type": "CLEARING",
+          "result": "APPROVED",
+          "token": "108449c6-122c-43a4-936c-228056e8ee58"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "3b8937a2-bf03-4bd4-83e8-ededf56118e9"
+    },
+    {
+      "status": "SETTLED",
+      "amount": 100,
+      "acquirer_fee": 0,
+      "authorization_amount": 100,
+      "settled_amount": 800,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "5e20e176-82bd-49b4-955c-c059b153b5db"
+        },
+        {
+          "amount": 800,
+          "type": "CLEARING",
+          "result": "APPROVED",
+          "token": "108449c6-122c-43a4-936c-228056e8ee58"
+        },
+        {
+          "amount": -100,
+          "type": "AUTHORIZATION_REVERSAL",
+          "result": "APPROVED",
+          "token": "1e7afb16-dadc-4dc4-adf5-69331141bd88"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "3b8937a2-bf03-4bd4-83e8-ededf56118e9"
+    },
+    {
+      "status": "SETTLED",
+      "amount": 100,
+      "acquirer_fee": 0,
+      "authorization_amount": 100,
+      "settled_amount": 900,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "5e20e176-82bd-49b4-955c-c059b153b5db"
+        },
+        {
+          "amount": 800,
+          "type": "CLEARING",
+          "result": "APPROVED",
+          "token": "108449c6-122c-43a4-936c-228056e8ee58"
+        },
+        {
+          "amount": -100,
+          "type": "AUTHORIZATION_REVERSAL",
+          "result": "APPROVED",
+          "token": "1e7afb16-dadc-4dc4-adf5-69331141bd88"
+        },
+        {
+          "amount": 100,
+          "type": "CLEARING",
+          "result": "APPROVED",
+          "token": "deb76e2b-b3ad-4e61-8c07-c4412b38ffb3"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "3b8937a2-bf03-4bd4-83e8-ededf56118e9"
+    },
+    {
+      "status": "SETTLED",
+      "amount": 100,
+      "acquirer_fee": 0,
+      "authorization_amount": 100,
+      "settled_amount": 100,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "5e20e176-82bd-49b4-955c-c059b153b5db"
+        },
+        {
+          "amount": 800,
+          "type": "CLEARING",
+          "result": "APPROVED",
+          "token": "108449c6-122c-43a4-936c-228056e8ee58"
+        },
+        {
+          "amount": -100,
+          "type": "AUTHORIZATION_REVERSAL",
+          "result": "APPROVED",
+          "token": "1e7afb16-dadc-4dc4-adf5-69331141bd88"
+        },
+        {
+          "amount": 100,
+          "type": "CLEARING",
+          "result": "APPROVED",
+          "token": "deb76e2b-b3ad-4e61-8c07-c4412b38ffb3"
+        },
+        {
+          "amount": -800,
+          "type": "RETURN",
+          "result": "APPROVED",
+          "token": "ed916ab4-8729-44ad-a681-bcc34e0b2223"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "3b8937a2-bf03-4bd4-83e8-ededf56118e9"
+    }
+  ],
+  "asa_auth_void_full": [
+    {
+      "status": "AUTHORIZATION",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "a9551772-ca3d-4dc2-9da2-0d74c1ac1c7c"
+    },
+    {
+      "status": "PENDING",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "b73a6058-d423-4543-9aba-0ff54c4e0c27"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "a9551772-ca3d-4dc2-9da2-0d74c1ac1c7c"
+    },
+    {
+      "status": "VOIDED",
+      "amount": 0,
+      "acquirer_fee": 0,
+      "authorization_amount": 0,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "b73a6058-d423-4543-9aba-0ff54c4e0c27"
+        },
+        {
+          "amount": -1000,
+          "type": "VOID",
+          "result": "APPROVED",
+          "token": "db083442-d2a3-45a9-abe5-24023fdb10fb"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "a9551772-ca3d-4dc2-9da2-0d74c1ac1c7c"
+    }
+  ],
+  "asa_auth_void_full_authorization_expiry": [
+    {
+      "status": "AUTHORIZATION",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "a9551772-ca3d-4dc2-9da2-0d74c1ac1c7c"
+    },
+    {
+      "status": "PENDING",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "b73a6058-d423-4543-9aba-0ff54c4e0c27"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "a9551772-ca3d-4dc2-9da2-0d74c1ac1c7c"
+    },
+    {
+      "status": "VOIDED",
+      "amount": 0,
+      "acquirer_fee": 0,
+      "authorization_amount": 0,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "b73a6058-d423-4543-9aba-0ff54c4e0c27"
+        },
+        {
+          "amount": -1000,
+          "type": "AUTHORIZATION_EXPIRY",
+          "result": "APPROVED",
+          "token": "db083442-d2a3-45a9-abe5-24023fdb10fb"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "a9551772-ca3d-4dc2-9da2-0d74c1ac1c7c"
+    }
+  ],
+  "asa_auth_void_full_authorization_reversal": [
+    {
+      "status": "AUTHORIZATION",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "a9551772-ca3d-4dc2-9da2-0d74c1ac1c7c"
+    },
+    {
+      "status": "PENDING",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "b73a6058-d423-4543-9aba-0ff54c4e0c27"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "a9551772-ca3d-4dc2-9da2-0d74c1ac1c7c"
+    },
+    {
+      "status": "VOIDED",
+      "amount": 0,
+      "acquirer_fee": 0,
+      "authorization_amount": 0,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "b73a6058-d423-4543-9aba-0ff54c4e0c27"
+        },
+        {
+          "amount": -1000,
+          "type": "AUTHORIZATION_REVERSAL",
+          "result": "APPROVED",
+          "token": "db083442-d2a3-45a9-abe5-24023fdb10fb"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "a9551772-ca3d-4dc2-9da2-0d74c1ac1c7c"
+    }
+  ],
+  "asa_auth_void_partial": [
+    {
+      "status": "AUTHORIZATION",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "449afa1d-95dd-406f-9d72-c8b4396055f9"
+    },
+    {
+      "status": "PENDING",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "79c336e6-8782-4df5-9992-c7c9bab0ad4e"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "449afa1d-95dd-406f-9d72-c8b4396055f9"
+    },
+    {
+      "status": "PENDING",
+      "amount": 100,
+      "acquirer_fee": 0,
+      "authorization_amount": 100,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "79c336e6-8782-4df5-9992-c7c9bab0ad4e"
+        },
+        {
+          "amount": -900,
+          "type": "VOID",
+          "result": "APPROVED",
+          "token": "c97c23d5-02c1-4361-b371-f1e40c50a73f"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "449afa1d-95dd-406f-9d72-c8b4396055f9"
+    }
+  ],
+  "asa_auth_auth_advice": [
+    {
+      "status": "AUTHORIZATION",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "1be1b9cd-442d-4052-968e-b5a2c672526d"
+    },
+    {
+      "status": "PENDING",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "d2dba16c-1ff2-412e-90e0-1e1bbe03f8e1"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "1be1b9cd-442d-4052-968e-b5a2c672526d"
+    },
+    {
+      "status": "PENDING",
+      "amount": 2000,
+      "acquirer_fee": 0,
+      "authorization_amount": 2000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "d2dba16c-1ff2-412e-90e0-1e1bbe03f8e1"
+        },
+        {
+          "amount": 2000,
+          "type": "AUTHORIZATION_ADVICE",
+          "result": "APPROVED",
+          "token": "f682b53a-79f2-4ce1-ac0f-0771a626409e"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "1be1b9cd-442d-4052-968e-b5a2c672526d"
+    }
+  ],
+  "multiple_completion_full_return": [
+    {
+      "status": "AUTHORIZATION",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "bb3ccac0-4344-4d69-9ce1-9747af46cda6"
+    },
+    {
+      "status": "PENDING",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "8d3024cf-50b5-43a3-9b67-e75631e00845"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "bb3ccac0-4344-4d69-9ce1-9747af46cda6"
+    },
+    {
+      "status": "SETTLED",
+      "amount": 1000,
+      "acquirer_fee": 0,
+      "authorization_amount": 1000,
+      "settled_amount": 1000,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "8d3024cf-50b5-43a3-9b67-e75631e00845"
+        },
+        {
+          "amount": 1000,
+          "type": "CLEARING",
+          "result": "APPROVED",
+          "token": "6d6148d0-0340-4ca4-b9b6-b0a28c95ee6d"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "bb3ccac0-4344-4d69-9ce1-9747af46cda6"
+    },
+    {
+      "status": "VOIDED",
+      "amount": 0,
+      "acquirer_fee": 0,
+      "authorization_amount": 0,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "8d3024cf-50b5-43a3-9b67-e75631e00845"
+        },
+        {
+          "amount": 1000,
+          "type": "CLEARING",
+          "result": "APPROVED",
+          "token": "6d6148d0-0340-4ca4-b9b6-b0a28c95ee6d"
+        },
+        {
+          "amount": -1000,
+          "type": "RETURN",
+          "result": "APPROVED",
+          "token": "bdd6501d-f8a5-4ed7-b3f2-ce5a9010ea68"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "bb3ccac0-4344-4d69-9ce1-9747af46cda6"
+    }
+  ],
+  "multiple_completion_full_return_reversal": [
+    {
+      "status": "AUTHORIZATION",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "bb3ccac0-4344-4d69-9ce1-9747af46cda6"
+    },
+    {
+      "status": "PENDING",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "8d3024cf-50b5-43a3-9b67-e75631e00845"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "bb3ccac0-4344-4d69-9ce1-9747af46cda6"
+    },
+    {
+      "status": "SETTLED",
+      "amount": 1000,
+      "acquirer_fee": 0,
+      "authorization_amount": 1000,
+      "settled_amount": 1000,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "8d3024cf-50b5-43a3-9b67-e75631e00845"
+        },
+        {
+          "amount": 1000,
+          "type": "CLEARING",
+          "result": "APPROVED",
+          "token": "6d6148d0-0340-4ca4-b9b6-b0a28c95ee6d"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "bb3ccac0-4344-4d69-9ce1-9747af46cda6"
+    },
+    {
+      "status": "VOIDED",
+      "amount": 0,
+      "acquirer_fee": 0,
+      "authorization_amount": 0,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "8d3024cf-50b5-43a3-9b67-e75631e00845"
+        },
+        {
+          "amount": 1000,
+          "type": "CLEARING",
+          "result": "APPROVED",
+          "token": "6d6148d0-0340-4ca4-b9b6-b0a28c95ee6d"
+        },
+        {
+          "amount": -1000,
+          "type": "RETURN",
+          "result": "APPROVED",
+          "token": "bdd6501d-f8a5-4ed7-b3f2-ce5a9010ea68"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "bb3ccac0-4344-4d69-9ce1-9747af46cda6"
+    },
+    {
+      "status": "VOIDED",
+      "amount": 0,
+      "acquirer_fee": 0,
+      "authorization_amount": 0,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "AUTHORIZATION",
+          "result": "APPROVED",
+          "token": "8d3024cf-50b5-43a3-9b67-e75631e00845"
+        },
+        {
+          "amount": 1000,
+          "type": "CLEARING",
+          "result": "APPROVED",
+          "token": "6d6148d0-0340-4ca4-b9b6-b0a28c95ee6d"
+        },
+        {
+          "amount": -1000,
+          "type": "RETURN",
+          "result": "APPROVED",
+          "token": "bdd6501d-f8a5-4ed7-b3f2-ce5a9010ea68"
+        },
+        {
+          "amount": 1000,
+          "type": "RETURN_REVERSAL",
+          "result": "APPROVED",
+          "token": "9493f603-90a9-4ec5-81a6-b2e4beeef8cc"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "bb3ccac0-4344-4d69-9ce1-9747af46cda6"
+    }
+  ],
+  "force_post": [
+    {
+      "status": "SETTLED",
+      "amount": 1000,
+      "acquirer_fee": 0,
+      "authorization_amount": 1000,
+      "settled_amount": 1000,
+      "events": [
+        {
+          "amount": 1000,
+          "type": "CLEARING",
+          "result": "APPROVED",
+          "token": "d0150140-0ef1-4b89-8c23-7ad537006329"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "3a47f3fc-de3b-44b9-aea2-74e0c02e1fb8"
+    }
+  ],
+  "unmatched_return": [
+    {
+      "status": "SETTLED",
+      "amount": -1000,
+      "acquirer_fee": 0,
+      "authorization_amount": -1000,
+      "settled_amount": -1000,
+      "events": [
+        {
+          "amount": -1000,
+          "type": "RETURN",
+          "result": "APPROVED",
+          "token": "fa5cb793-0739-4eb8-8db2-9b452ed71930"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "265a9120-e42a-4c02-b3dc-eb80a2e3cf00"
+    }
+  ],
+  "return_reversal": [
+    {
+      "status": "SETTLED",
+      "amount": -1000,
+      "acquirer_fee": 0,
+      "authorization_amount": -1000,
+      "settled_amount": -1000,
+      "events": [
+        {
+          "amount": -1000,
+          "type": "RETURN",
+          "result": "APPROVED",
+          "token": "fa5cb793-0739-4eb8-8db2-9b452ed71930"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "265a9120-e42a-4c02-b3dc-eb80a2e3cf00"
+    },
+    {
+      "status": "VOIDED",
+      "amount": 1000,
+      "acquirer_fee": 0,
+      "authorization_amount": 0,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": -1000,
+          "type": "RETURN",
+          "result": "APPROVED",
+          "token": "fa5cb793-0739-4eb8-8db2-9b452ed71930"
+        },
+        {
+          "amount": 1000,
+          "type": "RETURN_REVERSAL",
+          "result": "APPROVED",
+          "token": "db432c0a-3e08-412d-8701-1a4079d5664a"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "265a9120-e42a-4c02-b3dc-eb80a2e3cf00"
+    }
+  ],
+  "balance_inquiry": [
+    {
+      "status": "AUTHORIZATION",
+      "amount": 1000,
+      "acquirer_fee": 100,
+      "authorization_amount": 1000,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "88e449f3-3f24-4ab6-aaee-45f925b62b94"
+    },
+    {
+      "status": "BALANCE_INQUIRY",
+      "amount": 0,
+      "acquirer_fee": 0,
+      "authorization_amount": 0,
+      "settled_amount": 0,
+      "events": [],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "1cd42e61-c973-4349-a902-014d2fae35db"
+    },
+    {
+      "status": "SETTLED",
+      "amount": 0,
+      "acquirer_fee": 0,
+      "authorization_amount": 0,
+      "settled_amount": 0,
+      "events": [
+        {
+          "amount": 0,
+          "type": "BALANCE_INQUIRY",
+          "result": "APPROVED",
+          "token": "488fe0f2-034a-40fa-a4f7-400f76a69ac1"
+        }
+      ],
+      "created": "2022-10-01T00:00:00Z",
+      "token": "1cd42e61-c973-4349-a902-014d2fae35db"
+    }
+  ],
+  "multi_completion_return_doesnt_drop_hold": [
+    {
+      "acquirer_fee": 0,
+      "amount": 567,
+      "authorization_amount": 567,
+      "cash_amount": 0,
+      "conversion_rate": 1,
+      "created": "2023-02-22 17:06:14Z",
+      "events": [],
+      "merchant": {
+        "acceptor_id": "7d43bfe1-7db2-459e-8788-78789fe7dfae",
+        "city": "Miami",
+        "country": "USA",
+        "descriptor": "Merchant Name",
+        "mcc": "7656",
+        "state": "FLO"
+      },
+      "merchant_currency": "USD",
+      "status": "AUTHORIZATION",
+      "token": "01f04ca7-ec13-49f8-b917-82bc42dd1698"
+    },
+    {
+      "acquirer_fee": 0,
+      "amount": 567,
+      "authorization_amount": 567,
+      "authorization_code": "e35b32b0-cf69-4fba-8e0d-e7fffaa437a7",
+      "created": "2023-02-22 17:06:14Z",
+      "events": [
+        {
+          "amount": 567,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "ea14702f-a817-470b-9eed-04447a94a1b6",
+          "type": "AUTHORIZATION"
+        }
+      ],
+      "merchant": {
+        "acceptor_id": "7d43bfe1-7db2-459e-8788-78789fe7dfae",
+        "city": "Miami",
+        "country": "USA",
+        "descriptor": "Merchant Name",
+        "mcc": "7656",
+        "state": "FLO"
+      },
+      "merchant_amount": 567,
+      "merchant_currency": "USD",
+      "network": "UNKNOWN",
+      "result": "APPROVED",
+      "settled_amount": 0,
+      "status": "PENDING",
+      "token": "01f04ca7-ec13-49f8-b917-82bc42dd1698"
+    },
+    {
+      "acquirer_fee": 0,
+      "amount": 567,
+      "authorization_amount": 567,
+      "authorization_code": "48b59bca-5acc-4288-a141-53e9778c2779",
+      "created": "2023-02-22 17:06:14Z",
+      "events": [
+        {
+          "amount": 567,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "ea14702f-a817-470b-9eed-04447a94a1b6",
+          "type": "AUTHORIZATION"
+        },
+        {
+          "amount": 100,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "0bcd25ee-d341-40ee-8537-64d2d58894c8",
+          "type": "CLEARING"
+        }
+      ],
+      "merchant": {
+        "acceptor_id": "7d43bfe1-7db2-459e-8788-78789fe7dfae",
+        "city": "Miami",
+        "country": "USA",
+        "descriptor": "Merchant Name",
+        "mcc": "7656",
+        "state": "FLO"
+      },
+      "merchant_amount": 567,
+      "merchant_currency": "USD",
+      "network": "UNKNOWN",
+      "result": "APPROVED",
+      "settled_amount": 100,
+      "status": "PENDING",
+      "token": "01f04ca7-ec13-49f8-b917-82bc42dd1698"
+    },
+    {
+      "acquirer_fee": 0,
+      "amount": 517,
+      "authorization_amount": 517,
+      "authorization_code": "a2b4be8a-e2bf-4aea-9f38-995bdd0c2e5e",
+      "created": "2023-02-22 17:06:14Z",
+      "events": [
+        {
+          "amount": 567,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "ea14702f-a817-470b-9eed-04447a94a1b6",
+          "type": "AUTHORIZATION"
+        },
+        {
+          "amount": 100,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "0bcd25ee-d341-40ee-8537-64d2d58894c8",
+          "type": "CLEARING"
+        },
+        {
+          "amount": -50,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "eba8e41e-857d-4b08-9ade-19cca4633dc7",
+          "type": "AUTHORIZATION_REVERSAL"
+        }
+      ],
+      "merchant": {
+        "acceptor_id": "7d43bfe1-7db2-459e-8788-78789fe7dfae",
+        "city": "Miami",
+        "country": "USA",
+        "descriptor": "Merchant Name",
+        "mcc": "7656",
+        "state": "FLO"
+      },
+      "merchant_amount": 517,
+      "merchant_currency": "USD",
+      "network": "UNKNOWN",
+      "result": "APPROVED",
+      "settled_amount": 100,
+      "status": "PENDING",
+      "token": "01f04ca7-ec13-49f8-b917-82bc42dd1698"
+    },
+    {
+      "acquirer_fee": 0,
+      "amount": 517,
+      "authorization_amount": 517,
+      "authorization_code": "cf918dd1-04bc-4f81-b802-e9af22728fa0",
+      "created": "2023-02-22 17:06:14Z",
+      "events": [
+        {
+          "amount": 567,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "ea14702f-a817-470b-9eed-04447a94a1b6",
+          "type": "AUTHORIZATION"
+        },
+        {
+          "amount": 100,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "0bcd25ee-d341-40ee-8537-64d2d58894c8",
+          "type": "CLEARING"
+        },
+        {
+          "amount": -50,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "eba8e41e-857d-4b08-9ade-19cca4633dc7",
+          "type": "AUTHORIZATION_REVERSAL"
+        },
+        {
+          "amount": 367,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "9607dab3-4364-49aa-81fe-aa12e6c732d6",
+          "type": "CLEARING"
+        }
+      ],
+      "merchant": {
+        "acceptor_id": "7d43bfe1-7db2-459e-8788-78789fe7dfae",
+        "city": "Miami",
+        "country": "USA",
+        "descriptor": "Merchant Name",
+        "mcc": "7656",
+        "state": "FLO"
+      },
+      "merchant_amount": 517,
+      "merchant_currency": "USD",
+      "network": "UNKNOWN",
+      "result": "APPROVED",
+      "settled_amount": 417,
+      "status": "SETTLED",
+      "token": "01f04ca7-ec13-49f8-b917-82bc42dd1698"
+    },
+    {
+      "acquirer_fee": 0,
+      "amount": 417,
+      "authorization_amount": 417,
+      "authorization_code": "ae5b814f-744d-4cd4-b99f-7ff426e3ee5f",
+      "created": "2023-02-22 17:06:14Z",
+      "events": [
+        {
+          "amount": 567,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "ea14702f-a817-470b-9eed-04447a94a1b6",
+          "type": "AUTHORIZATION"
+        },
+        {
+          "amount": 100,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "0bcd25ee-d341-40ee-8537-64d2d58894c8",
+          "type": "CLEARING"
+        },
+        {
+          "amount": -50,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "eba8e41e-857d-4b08-9ade-19cca4633dc7",
+          "type": "AUTHORIZATION_REVERSAL"
+        },
+        {
+          "amount": 367,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "9607dab3-4364-49aa-81fe-aa12e6c732d6",
+          "type": "CLEARING"
+        },
+        {
+          "amount": -100,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "14d9969f-3db9-4272-8ee2-d1160fa06536",
+          "type": "RETURN"
+        }
+      ],
+      "merchant": {
+        "acceptor_id": "7d43bfe1-7db2-459e-8788-78789fe7dfae",
+        "city": "Miami",
+        "country": "USA",
+        "descriptor": "Merchant Name",
+        "mcc": "7656",
+        "state": "FLO"
+      },
+      "merchant_amount": 417,
+      "merchant_currency": "USD",
+      "network": "UNKNOWN",
+      "result": "APPROVED",
+      "settled_amount": 367,
+      "status": "SETTLED",
+      "token": "01f04ca7-ec13-49f8-b917-82bc42dd1698"
+    },
+    {
+      "acquirer_fee": 0,
+      "amount": 367,
+      "authorization_amount": 367,
+      "authorization_code": "72d85e13-451b-43fb-8b92-df6ba02133c8",
+      "created": "2023-02-22 17:06:14Z",
+      "events": [
+        {
+          "amount": 567,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "ea14702f-a817-470b-9eed-04447a94a1b6",
+          "type": "AUTHORIZATION"
+        },
+        {
+          "amount": 100,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "0bcd25ee-d341-40ee-8537-64d2d58894c8",
+          "type": "CLEARING"
+        },
+        {
+          "amount": -50,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "eba8e41e-857d-4b08-9ade-19cca4633dc7",
+          "type": "AUTHORIZATION_REVERSAL"
+        },
+        {
+          "amount": 367,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "9607dab3-4364-49aa-81fe-aa12e6c732d6",
+          "type": "CLEARING"
+        },
+        {
+          "amount": -100,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "14d9969f-3db9-4272-8ee2-d1160fa06536",
+          "type": "RETURN"
+        },
+        {
+          "amount": -50,
+          "created": "2023-02-22 17:06:14Z",
+          "result": "APPROVED",
+          "token": "f63b6741-76bf-4934-9318-e7c6bced6d25",
+          "type": "AUTHORIZATION_EXPIRY"
+        }
+      ],
+      "merchant": {
+        "acceptor_id": "7d43bfe1-7db2-459e-8788-78789fe7dfae",
+        "city": "Miami",
+        "country": "USA",
+        "descriptor": "Merchant Name",
+        "mcc": "7656",
+        "state": "FLO"
+      },
+      "merchant_amount": 367,
+      "merchant_currency": "USD",
+      "network": "UNKNOWN",
+      "result": "APPROVED",
+      "settled_amount": 367,
+      "status": "SETTLED",
+      "token": "01f04ca7-ec13-49f8-b917-82bc42dd1698"
+    }
+  ]
+}
