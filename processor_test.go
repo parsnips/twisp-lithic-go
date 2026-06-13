@@ -73,7 +73,7 @@ func TestProcessVoidsAndReplacesAuthorization(t *testing.T) {
 	require.Equal(t, authID, uuidFromProto(api.voids[1].GetTransactionId()))
 	require.True(t, api.voids[1].GetProperties().GetIdempotent())
 	require.Equal(t, 5, api.anyStreams)
-	require.Equal(t, 2, api.postTransactionBatches)
+	require.Equal(t, 3, api.postTransactionBatches)
 }
 
 func TestProcessReplaysExistingTransactionThroughIdempotentPost(t *testing.T) {

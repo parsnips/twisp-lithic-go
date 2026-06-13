@@ -192,65 +192,44 @@ func (p *Processor) clearAndReplaceAuthorization(ctx context.Context, input Lith
 }
 
 func (p *Processor) postTransaction(ctx context.Context, input LithicRequest, transactionID uuid.UUID, tranCode string, params map[string]string, overrideVelocity bool) (*Result, error) {
-	existing, exists, err := p.transactionAlreadyProcessed(ctx, input, transactionID)
-	if err != nil {
-		return nil, err
-	}
-	if exists {
-		balanceResp, err := p.twisp.ReadBalance(ctx, &corev1.ReadBalanceRequest{
-			JournalId: newUUID(input.JournalID),
+	result := &Result{}
+	err := p.inTransaction(ctx, func(session AnySession) error {
+		existing, exists, err := p.transactionAlreadyProcessedInSession(session, input, transactionID)
+		if err != nil {
+			return err
+		}
+
+		journalID := newUUID(input.JournalID)
+		if exists {
+			result.Transaction = &corev1.PostTransactionResponse{Transaction: existing}
+		} else {
+			resp, err := p.postTransactionsInSession(session, []*corev1.PostTransactionsOperation{
+				postOperation(transactionID, tranCode, params, overrideVelocity),
+			})
+			if err != nil {
+				return err
+			}
+			journalID = applyPostTransactionsResponse(result, resp, journalID)
+		}
+
+		balanceResp, err := p.readBalanceInSession(session, &corev1.ReadBalanceRequest{
+			JournalId: journalID,
 			AccountId: newUUID(input.AccountID),
 			Currency:  "USD",
 		})
 		if err != nil {
-			return nil, err
+			return err
 		}
-		return &Result{
-			Transaction: &corev1.PostTransactionResponse{Transaction: existing},
-			Balance:     balanceResp,
-		}, nil
-	}
-
-	postResp, err := p.twisp.PostTransaction(ctx, postRequest(transactionID, tranCode, params, overrideVelocity))
-	if err != nil {
-		return nil, err
-	}
-
-	balanceResp, err := p.twisp.ReadBalance(ctx, &corev1.ReadBalanceRequest{
-		JournalId: postResp.GetTransaction().GetJournalId(),
-		AccountId: newUUID(input.AccountID),
-		Currency:  "USD",
+		result.Balance = balanceResp
+		return nil
 	})
 	if err != nil {
 		return nil, err
 	}
-
-	return &Result{
-		Transaction: postResp,
-		Balance:     balanceResp,
-	}, nil
+	return result, nil
 }
 
-func (p *Processor) transactionAlreadyProcessed(ctx context.Context, input LithicRequest, transactionID uuid.UUID) (*corev1.Transaction, bool, error) {
-	session, err := p.twisp.OpenAnyStream(ctx)
-	if err != nil {
-		return nil, false, err
-	}
-	defer session.Close()
-
-	begun := false
-	committed := false
-	defer func() {
-		if begun && !committed {
-			_, _ = session.Do(anyRequest(&corev1.AnyRequestOperation{RollbackTransaction: &corev1.RollbackTransactionRequest{}}))
-		}
-	}()
-
-	if err := p.beginTransaction(session); err != nil {
-		return nil, false, err
-	}
-	begun = true
-
+func (p *Processor) transactionAlreadyProcessedInSession(session AnySession, input LithicRequest, transactionID uuid.UUID) (*corev1.Transaction, bool, error) {
 	transactions, err := p.listCorrelatedTransactionsInSession(session, input)
 	if err != nil {
 		return nil, false, err
@@ -269,82 +248,81 @@ func (p *Processor) transactionAlreadyProcessed(ctx context.Context, input Lithi
 		break
 	}
 	superseded := existing == nil && webhookSupersededByTransactions(fullTransactions, input.Webhook)
-	if err := p.commitTransaction(session); err != nil {
-		return nil, false, err
-	}
-	committed = true
-
 	return existing, existing != nil || superseded, nil
 }
 
 func (p *Processor) processAuthorizationMutation(ctx context.Context, input LithicRequest, transactionID uuid.UUID, build func([]*corev1.Transaction) ([]*corev1.PostTransactionsOperation, error)) (*Result, error) {
-	session, err := p.twisp.OpenAnyStream(ctx)
-	if err != nil {
-		return nil, err
-	}
-	defer session.Close()
-
-	begun := false
-	committed := false
-	defer func() {
-		if begun && !committed {
-			_, _ = session.Do(anyRequest(&corev1.AnyRequestOperation{RollbackTransaction: &corev1.RollbackTransactionRequest{}}))
+	result := &Result{}
+	err := p.inTransaction(ctx, func(session AnySession) error {
+		activeAuths, transactions, err := p.activeAuthorizationTransactionsInSession(session, input)
+		if err != nil {
+			return err
 		}
-	}()
 
-	if err := p.beginTransaction(session); err != nil {
-		return nil, err
-	}
-	begun = true
+		journalID := newUUID(input.JournalID)
+		if !transactionExists(transactions, transactionID) && !webhookSupersededByTransactions(transactions, input.Webhook) {
+			operations, err := build(activeAuths)
+			if err != nil {
+				return err
+			}
+			if len(operations) > 0 {
+				resp, err := p.postTransactionsInSession(session, operations)
+				if err != nil {
+					return err
+				}
+				journalID = applyPostTransactionsResponse(result, resp, journalID)
+			}
+		}
 
-	activeAuths, transactions, err := p.activeAuthorizationTransactionsInSession(session, input)
-	if err != nil {
-		return nil, err
-	}
-	if transactionExists(transactions, transactionID) || webhookSupersededByTransactions(transactions, input.Webhook) {
 		balanceResp, err := p.readBalanceInSession(session, &corev1.ReadBalanceRequest{
-			JournalId: newUUID(input.JournalID),
+			JournalId: journalID,
 			AccountId: newUUID(input.AccountID),
 			Currency:  "USD",
 		})
 		if err != nil {
-			return nil, err
+			return err
 		}
-		if err := p.commitTransaction(session); err != nil {
-			return nil, err
-		}
-		committed = true
-		return &Result{Balance: balanceResp}, nil
-	}
-	operations, err := build(activeAuths)
-	if err != nil {
-		return nil, err
-	}
-
-	result := &Result{}
-	var journalID = newUUID(input.JournalID)
-	if len(operations) > 0 {
-		resp, err := p.postTransactionsInSession(session, operations)
-		if err != nil {
-			return nil, err
-		}
-		journalID = applyPostTransactionsResponse(result, resp, journalID)
-	}
-
-	balanceResp, err := p.readBalanceInSession(session, &corev1.ReadBalanceRequest{
-		JournalId: journalID,
-		AccountId: newUUID(input.AccountID),
-		Currency:  "USD",
+		result.Balance = balanceResp
+		return nil
 	})
 	if err != nil {
 		return nil, err
 	}
-	result.Balance = balanceResp
+	return result, nil
+}
+
+// inTransaction opens an Any stream, begins an interactive transaction, runs fn
+// against the open session, and commits. If fn returns an error the transaction
+// is rolled back. The stream is always closed. Routing reads and writes through
+// a single committed transaction gives callers a consistent snapshot — e.g. a
+// balance read after a post reflects exactly that post and nothing concurrent.
+func (p *Processor) inTransaction(ctx context.Context, fn func(AnySession) error) error {
+	session, err := p.twisp.OpenAnyStream(ctx)
+	if err != nil {
+		return err
+	}
+	defer session.Close()
+
+	if err := p.beginTransaction(session); err != nil {
+		return err
+	}
+
+	committed := false
+	defer func() {
+		if !committed {
+			_, _ = session.Do(anyRequest(&corev1.AnyRequestOperation{RollbackTransaction: &corev1.RollbackTransactionRequest{}}))
+		}
+	}()
+
+	if err := fn(session); err != nil {
+		return err
+	}
+
 	if err := p.commitTransaction(session); err != nil {
-		return nil, err
+		return err
 	}
 	committed = true
-	return result, nil
+	return nil
 }
 
 func (p *Processor) beginTransaction(session AnySession) error {
